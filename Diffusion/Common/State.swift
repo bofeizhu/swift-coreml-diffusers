@@ -31,16 +31,20 @@ public enum StableDiffusionScheduler: String {
     /// Scheduler that uses a second order DPM-Solver++ algorithm
     case dpmSolverMultistepScheduler
 
+    case eulerAncestralDiscreteScheduler
+
     func asStableDiffusionScheduler() -> StableDiffusion.StableDiffusionScheduler {
         switch self {
         case .pndmScheduler: return StableDiffusion.StableDiffusionScheduler.pndmScheduler
         case .dpmSolverMultistepScheduler: return StableDiffusion.StableDiffusionScheduler.dpmSolverMultistepScheduler
+        case .eulerAncestralDiscreteScheduler: return StableDiffusion.StableDiffusionScheduler.eulerAncestralDiscreteScheduler
         }
     }
 }
 
 class GenerationContext: ObservableObject {
-    let scheduler = StableDiffusionScheduler.dpmSolverMultistepScheduler
+  let scheduler = StableDiffusionScheduler.eulerAncestralDiscreteScheduler
+    // pndmScheduler // eulerAncestralDiscreteScheduler // dpmSolverMultistepScheduler
 
     @Published var pipeline: Pipeline? = nil {
         didSet {

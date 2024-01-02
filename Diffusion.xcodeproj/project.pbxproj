@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		051E3C912B391D5500086229 /* StableDiffusion in Frameworks */ = {isa = PBXBuildFile; productRef = 051E3C902B391D5500086229 /* StableDiffusion */; };
+		051E3C932B391D5F00086229 /* StableDiffusion in Frameworks */ = {isa = PBXBuildFile; productRef = 051E3C922B391D5F00086229 /* StableDiffusion */; };
 		8C4B32042A770C1D0090EF17 /* DiffusionImage+macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4B32032A770C1D0090EF17 /* DiffusionImage+macOS.swift */; };
 		8C4B32062A770C300090EF17 /* DiffusionImage+iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4B32052A770C300090EF17 /* DiffusionImage+iOS.swift */; };
 		8C4B32082A77F90C0090EF17 /* Utils_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4B32072A77F90C0090EF17 /* Utils_iOS.swift */; };
@@ -16,8 +18,6 @@
 		8CEEB7D92A54C88C00C23829 /* DiffusionImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEEB7D82A54C88C00C23829 /* DiffusionImage.swift */; };
 		8CEEB7DA2A54C88C00C23829 /* DiffusionImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEEB7D82A54C88C00C23829 /* DiffusionImage.swift */; };
 		EB067F872992E561004D1AD9 /* HelpContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB067F862992E561004D1AD9 /* HelpContent.swift */; };
-		EB25B3D62A3A2DC4000E25A1 /* StableDiffusion in Frameworks */ = {isa = PBXBuildFile; productRef = EB25B3D52A3A2DC4000E25A1 /* StableDiffusion */; };
-		EB25B3D82A3A2DD5000E25A1 /* StableDiffusion in Frameworks */ = {isa = PBXBuildFile; productRef = EB25B3D72A3A2DD5000E25A1 /* StableDiffusion */; };
 		EB560F0429A3C20800C0F8B8 /* Capabilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB560F0329A3C20800C0F8B8 /* Capabilities.swift */; };
 		EBB5BA5329425BEE003A2A5B /* PipelineLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB5BA5229425BEE003A2A5B /* PipelineLoader.swift */; };
 		EBB5BA5A29426E06003A2A5B /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB5BA5929426E06003A2A5B /* Downloader.swift */; };
@@ -116,8 +116,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB25B3D62A3A2DC4000E25A1 /* StableDiffusion in Frameworks */,
 				EBB5BA5D294504DE003A2A5B /* ZIPFoundation in Frameworks */,
+				051E3C912B391D5500086229 /* StableDiffusion in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,7 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F155203C297118E700DC009B /* CompactSlider in Frameworks */,
-				EB25B3D82A3A2DD5000E25A1 /* StableDiffusion in Frameworks */,
+				051E3C932B391D5F00086229 /* StableDiffusion in Frameworks */,
 				EBDD7DAF29731FB300C1C4B2 /* ZIPFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,7 +318,7 @@
 			name = Diffusion;
 			packageProductDependencies = (
 				EBB5BA5C294504DE003A2A5B /* ZIPFoundation */,
-				EB25B3D52A3A2DC4000E25A1 /* StableDiffusion */,
+				051E3C902B391D5500086229 /* StableDiffusion */,
 			);
 			productName = Diffusion;
 			productReference = EBE755C5293E37DD00806B32 /* Diffusion.app */;
@@ -378,7 +378,7 @@
 			packageProductDependencies = (
 				F155203B297118E700DC009B /* CompactSlider */,
 				EBDD7DAE29731FB300C1C4B2 /* ZIPFoundation */,
-				EB25B3D72A3A2DD5000E25A1 /* StableDiffusion */,
+				051E3C922B391D5F00086229 /* StableDiffusion */,
 			);
 			productName = "Diffusion-macOS";
 			productReference = F15520212971093300DC009B /* Diffusers.app */;
@@ -422,7 +422,7 @@
 			packageReferences = (
 				EBB5BA5B294504DE003A2A5B /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
 				F155203A297118E600DC009B /* XCRemoteSwiftPackageReference "CompactSlider" */,
-				EB25B3D42A3A2DC4000E25A1 /* XCRemoteSwiftPackageReference "ml-stable-diffusion" */,
+				051E3C8F2B391CFE00086229 /* XCLocalSwiftPackageReference "../CoreML/ml-stable-diffusion" */,
 			);
 			productRefGroup = EBE755C6293E37DD00806B32 /* Products */;
 			projectDirPath = "";
@@ -697,10 +697,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Diffusion/Preview Content\"";
+				DEVELOPMENT_TEAM = 89L63C4YK8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Diffusion/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Diffusers;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "To be able to save generated images to your Photo Library, you’ll need to allow this.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -715,6 +718,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ziixy.Diffusers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -740,6 +744,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Diffusion/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Diffusers;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "To be able to save generated images to your Photo Library, you’ll need to allow this.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -866,7 +872,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Diffusion-macOS/Preview Content\"";
-				DEVELOPMENT_TEAM = 2EADP68M95;
+				DEVELOPMENT_TEAM = 89L63C4YK8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Diffusion-macOS/Info.plist";
@@ -877,6 +883,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ziixy.Diffusers;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -894,7 +901,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Diffusion-macOS/Preview Content\"";
-				DEVELOPMENT_TEAM = 2EADP68M95;
+				DEVELOPMENT_TEAM = 89L63C4YK8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Diffusion-macOS/Info.plist";
@@ -905,7 +912,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.huggingface.Diffusers;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ziixy.Diffusers;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -962,15 +969,14 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		EB25B3D42A3A2DC4000E25A1 /* XCRemoteSwiftPackageReference "ml-stable-diffusion" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apple/ml-stable-diffusion";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
+/* Begin XCLocalSwiftPackageReference section */
+		051E3C8F2B391CFE00086229 /* XCLocalSwiftPackageReference "../CoreML/ml-stable-diffusion" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../CoreML/ml-stable-diffusion";
 		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
 		EBB5BA5B294504DE003A2A5B /* XCRemoteSwiftPackageReference "ZIPFoundation" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/weichsel/ZIPFoundation.git";
@@ -990,18 +996,18 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		051E3C902B391D5500086229 /* StableDiffusion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 051E3C8F2B391CFE00086229 /* XCLocalSwiftPackageReference "../CoreML/ml-stable-diffusion" */;
+			productName = StableDiffusion;
+		};
+		051E3C922B391D5F00086229 /* StableDiffusion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 051E3C8F2B391CFE00086229 /* XCLocalSwiftPackageReference "../CoreML/ml-stable-diffusion" */;
+			productName = StableDiffusion;
+		};
 		EB0199482A31FEAF00B133E2 /* StableDiffusion */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = StableDiffusion;
-		};
-		EB25B3D52A3A2DC4000E25A1 /* StableDiffusion */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EB25B3D42A3A2DC4000E25A1 /* XCRemoteSwiftPackageReference "ml-stable-diffusion" */;
-			productName = StableDiffusion;
-		};
-		EB25B3D72A3A2DD5000E25A1 /* StableDiffusion */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EB25B3D42A3A2DC4000E25A1 /* XCRemoteSwiftPackageReference "ml-stable-diffusion" */;
 			productName = StableDiffusion;
 		};
 		EBB5BA5C294504DE003A2A5B /* ZIPFoundation */ = {
