@@ -43,7 +43,7 @@ public enum StableDiffusionScheduler: String {
 }
 
 class GenerationContext: ObservableObject {
-  let scheduler = StableDiffusionScheduler.eulerAncestralDiscreteScheduler
+  let scheduler = StableDiffusionScheduler.dpmSolverMultistepScheduler
     // pndmScheduler // eulerAncestralDiscreteScheduler // dpmSolverMultistepScheduler
 
     @Published var pipeline: Pipeline? = nil {

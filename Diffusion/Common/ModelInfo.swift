@@ -166,7 +166,13 @@ extension ModelInfo {
         supportsAttentionV2: true,
         quantized: true
     )
-        
+
+    static let sdTurbo = ModelInfo(
+        modelId: "zhubofei/coreml-sd-turbo",
+        modelVersion: "SD Turbo",
+        supportsEncoder: true
+    )
+
     static let ofaSmall = ModelInfo(
         modelId: "pcuenq/coreml-small-stable-diffusion-v0",
         modelVersion: "OFA-Sys/small-stable-diffusion-v0"
@@ -212,7 +218,8 @@ extension ModelInfo {
                 ModelInfo.v2Base,
                 ModelInfo.v2Palettized,
                 ModelInfo.v21Base,
-                ModelInfo.v21Palettized
+                ModelInfo.v21Palettized,
+                ModelInfo.sdTurbo
             ]
             if runningOnMac {
                 models.append(contentsOf: [
