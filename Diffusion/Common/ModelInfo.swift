@@ -173,6 +173,14 @@ extension ModelInfo {
         supportsEncoder: true
     )
 
+    static let sdTurboPalettized = ModelInfo(
+        modelId: "zhubofei/coreml-sd-turbo-palettized",
+        modelVersion: "SD Turbo [6 bit]",
+        supportsEncoder: true,
+        supportsAttentionV2: true,
+        quantized: true
+    )
+
     static let ofaSmall = ModelInfo(
         modelId: "pcuenq/coreml-small-stable-diffusion-v0",
         modelVersion: "OFA-Sys/small-stable-diffusion-v0"
@@ -208,6 +216,13 @@ extension ModelInfo {
         isXL: true
     )
 
+    static let xlTurbo = ModelInfo(
+        modelId: "zhubofei/coreml-sdxl-turbo",
+        modelVersion: "SDXL Turbo",
+        supportsEncoder: true,
+        isXL: true
+    )
+
     static let MODELS: [ModelInfo] = {
         if deviceSupportsQuantization {
             var models = [
@@ -219,13 +234,15 @@ extension ModelInfo {
                 ModelInfo.v2Palettized,
                 ModelInfo.v21Base,
                 ModelInfo.v21Palettized,
-                ModelInfo.sdTurbo
+                ModelInfo.sdTurbo,
+                ModelInfo.sdTurboPalettized
             ]
             if runningOnMac {
                 models.append(contentsOf: [
                     ModelInfo.xl,
                     ModelInfo.xlWithRefiner,
-                    ModelInfo.xlmbp
+                    ModelInfo.xlmbp,
+                    ModelInfo.xlTurbo
                 ])
             } else {
                 models.append(ModelInfo.xlmbpChunked)

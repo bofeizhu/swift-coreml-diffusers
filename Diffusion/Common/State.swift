@@ -66,10 +66,10 @@ class GenerationContext: ObservableObject {
     @Published var negativePrompt = ""
     
     // FIXME: Double to support the slider component
-    @Published var steps = 25.0
+    @Published var steps = 1.0
     @Published var numImages = 1.0
-    @Published var seed: UInt32 = 0
-    @Published var guidanceScale = 7.5
+    @Published var seed: UInt32 = 1
+    @Published var guidanceScale = 1.0
     @Published var previews = runningOnMac ? 5.0 : 0.0
     @Published var disableSafety = false
     @Published var previewImage: CGImage? = nil
